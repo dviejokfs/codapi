@@ -1,0 +1,12 @@
+{
+    "run": {
+        "engine": "docker",
+        "entry": "main.rs",
+        "steps": [
+            {
+                "box": "rust",
+                "command": ["run_rust", "main.rs"]
+            }
+        ]
+    }
+}

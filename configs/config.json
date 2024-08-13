@@ -6,8 +6,8 @@
         "cpu": 1,
         "memory": 64,
         "network": "none",
-        "writable": false,
-        "volume": "%s:/sandbox:ro",
+        "writable": true,
+        "volume": "%s:/sandbox",
         "cap_drop": ["all"],
         "ulimit": ["nofile=96"],
         "nproc": 64

@@ -1,0 +1,15 @@
+{
+    "run": {
+        "engine": "docker",
+        "entry": "main.py",
+        "steps": [
+            {
+                "box": "python",
+                "command": [
+                    "python",
+                    "main.py"
+                ]
+            }
+        ]
+    }
+}

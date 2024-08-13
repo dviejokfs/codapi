@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ $# -eq 0 ]; then
+    echo "Please provide a Rust file to run."
+    exit 1
+fi
+
+RUST_FILE=$1
+
+# Compile and run the Rust file
+rustc "$RUST_FILE" -o temp_executable && ./temp_executable
+
+# Clean up
+rm temp_executable

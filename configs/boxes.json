@@ -1,5 +1,11 @@
 {
     "alpine": {
         "image": "codapi/alpine"
+    },
+    "python": {
+        "image": "codapi/python"
+    },
+    "rust": {
+        "image": "codapi/rust"
     }
 }
