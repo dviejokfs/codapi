@@ -6,7 +6,7 @@ import (
 	"sort"
 )
 
-// A Config describes application cofig.
+// A Config describes application config.
 type Config struct {
 	PoolSize int   `json:"pool_size"`
 	Verbose  bool  `json:"verbose"`
@@ -99,6 +99,7 @@ type Step struct {
 	Version string   `json:"version"`
 	User    string   `json:"user"`
 	Action  string   `json:"action"`
+	Detach  bool     `json:"detach"`
 	Stdin   bool     `json:"stdin"`
 	Command []string `json:"command"`
 	Timeout int      `json:"timeout"`

@@ -32,51 +32,11 @@ For an introduction to Codapi, see this post: [Interactive code examples for fun
 
 See [Installing Codapi](docs/install.md) for details.
 
-## Usage (API)
+## Usage
 
-Call `/v1/exec` to run the code in a sandbox:
+See [API](docs/api.md) to run sandboxed code using the HTTP API.
 
-```http
-POST https://api.codapi.org/v1/exec
-content-type: application/json
-
-{
-    "sandbox": "python",
-    "command": "run",
-    "files": {
-        "": "print('hello world')"
-    }
-}
-```
-
-`sandbox` is the name of the pre-configured sandbox, and `command` is the name of a command supported by that sandbox. See [Adding a sandbox](docs/add-sandbox.md) for details on how to add a new sandbox.
-
-`files` is a map, where the key is a filename and the value is its contents. When executing a single file, it should either be named as the `command` expects, or be an empty string (as in the example above).
-
-Response:
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "id": "python_run_9b7b1afd",
-  "ok": true,
-  "duration": 314,
-  "stdout": "hello world\n",
-  "stderr": ""
-}
-```
-
--   `id` is the unique execution identifier.
--   `ok` is `true` if the code executed without errors, or `false` otherwise.
--   `duration` is the execution time in milliseconds.
--   `stdout` is what the code printed to the standard output.
--   `stderr` is what the code printed to the standard error, or a compiler/os error (if any).
-
-## Usage (JavaScript)
-
-See [codapi-js](https://github.com/nalgeon/codapi-js) to embed the JavaScript widget into a web page. The widget uses exactly the same API as described above.
+See [codapi-js](https://github.com/nalgeon/codapi-js) to embed the JavaScript widget into a web page.
 
 ## Contributing
 
@@ -84,12 +44,12 @@ Contributions are welcome. For anything other than bugfixes, please first open a
 
 Be sure to add or update tests as appropriate.
 
-## License
+## Funding
 
-Copyright 2023 [Anton Zhiyanov](https://antonz.org/).
+Codapi is mostly a [one-man](https://antonz.org/) project, not backed by a VC fund or anything.
 
-The software is available under the Apache-2.0 license.
+If you find Codapi useful, please consider sponsoring it on GitHub. It really helps to move the project forward.
 
-## Stay tuned
+♥ [Become a sponsor](https://github.com/sponsors/nalgeon) to support Codapi.
 
 ★ [Subscribe](https://antonz.org/subscribe/) to stay on top of new features.
