@@ -3,13 +3,13 @@ Description=Code playgrounds
 After=network.target
 
 [Service]
-Type=simple
-User=codapi
-WorkingDirectory=/opt/codapi
-ExecStart=/opt/codapi/codapi
-Restart=on-failure
-StandardOutput=file:/opt/codapi/codapi.log
-StandardError=file:/opt/codapi/codapi.log
+WorkingDirectory=/home/ubuntu/projects/kfs/codapi
+ExecStart=/usr/local/bin/codapi --port=12000
+Restart=always
+RestartSec=3
+LimitNOFILE=4096
+User=ubuntu
 
 [Install]
 WantedBy=multi-user.target
+
